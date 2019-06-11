@@ -15,36 +15,30 @@
   <link rel="stylesheet" href="CSS/fixed.css">
   <link rel="stylesheet" href="CSS/zindex.css">
   <link rel="stylesheet" href="CSS/invisible.css"> -->
-    <script src="JS/static.js"></script>
+    <!-- <script src="JS/main.js"></script> -->
+    <script type="text/javascript" src="JS/main.js"></script>
+
 
     <script>
-        function calculate()
-        {
-            var total=parseFloat(document.getElementById("totalBill").value);
-            var percent=parseFloat(document.getElementById("tipPercent").value);
-            var guests=parseFloat(document.getElementById("numOfGuests").value);
+        // function calculate() {
+        //     var total = parseFloat(document.getElementById("totalBill").value);
+        //     var percent = parseFloat(document.getElementById("tipPercent").value);
+        //     var guests = parseFloat(document.getElementById("numOfGuests").value);
 
-            var result1 = (total/100)*percent;              //total tip is
-            var result2 = ((total/100)*percent)/guests;     //tip per person
-            var result3 = (total/guests)+result1;           //tip and bill per person
-            var result4 = (total + ((total/100)*percent));  //total bill + tip is
+        //     var result1 = (total / 100) * percent;              //total tip is
+        //     var result2 = ((total / 100) * percent) / guests;     //tip per person
+        //     var result3 = (total / guests) + result1;           //tip and bill per person
+        //     var result4 = (total + ((total / 100) * percent));  //total bill + tip is
 
-            if(!isNaN(result1))
-            {   
-                document.getElementById("total-tip").innerHTML="The total tip is $"+ result1;
-                document.getElementById("tip-per-person").innerHTML="The tip per person is $"+ result2;
-                // console.log(new Intl.NumberFormat('de-US', { style: 'currency', currency: 'USD' }).format(result2));
-                document.getElementById("total-per-person").innerHTML="The total per person is $"+ result3;
-                document.getElementById("total-bill").innerHTML="The total bill is $"+ result4;
+        //     if (!isNaN(result1)) {
+        //         document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
+        //         document.getElementById("tip-per-person").innerHTML = "The tip per person is $" + result2;
+        //         document.getElementById("total-per-person").innerHTML = "The total per person is $" + result3;
+        //         document.getElementById("total-bill").innerHTML = "The total bill is $" + result4;
 
-            }
+        //     }
 
-            else
-            {
-                //error msg
-            }
-
-        }
+        // }
 
 
     </script>
@@ -54,16 +48,12 @@
 
 
 <body>
-    <scritp>
-
-    </scritp>
-    <h1> Check Please !!</h1>
+    
+    <!-- <h1> Check Please !!</h1>
     <h3 id="total-tip"></h3>
     <h3 id="tip-per-person"></h3>
     <h3 id="total-per-person"></h3>
     <h3 id="total-bill"></h3>
-
-
 
     Total <input type="text" id="totalBill">
     <br>
@@ -73,52 +63,65 @@
     <br>
 
     <input type="button" onclick="calculate();" value="Calculate">
-    <h3 id="result"></h3>
-
+    <h3 id="result"></h3> -->
 
 
     <table cellpadding="3" cellspacing="1">
         <tr>
-            <td class="verybigtext">Tip Per Person:</td>
+            <td class="verybigtext">The Total Tip is:</td>
             <td align="right" class="verybigtext"></td>
         </tr>
         <tr>
-            <td class="verybigtext">Total Per Person:</td>
+            <td class="verybigtext">Tip Per Person: is</td>
             <td align="right" class="verybigtext"></td>
         </tr>
         <tr>
-            <td class="verybigtext">Total Bill:</td>
+            <td class="verybigtext">Total Per Person is:</td>
             <td align="right" class="verybigtext"></td>
         </tr>
         <tr>
-            <td> </td>
-            <td> </td>
+            <td class="verybigtext">The Total Bill is:</td>
+            <td align="right" class="verybigtext"></td>
         </tr>
     </table>
 
+    <h3 id="result"></h3>
+    <table class="panel" align="center">
+        <tr>
+            <td class="bigtext">Total</td>
+            <td align="right">
+                <input type="text" id="totalBill" class="bigtext inlong indollar" value="" onKeyUp=";">
+            </td>
+            <!-- //non breaking space -->
+			<td>&nbsp;</td> 
+        </tr>
+        <tr>
+            <td class="bigtext">Tip %</td>
+            <td align="right">
+                <input type="text" id="tipPercent" class="bigtext inlong inpct" value="" onKeyUp=";">
+            </td>
 
+        </tr>
+        <tr>
+            <td class="bigtext">Number of People</td>
+            <td align="right">
+                <input type="text" id="numOfGuests" class="bigtext inlong" value="" onKeyUp=";">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <!-- <input typ="button" onclick="calculate();" value="Calculate"> -->
+                <button onclick="calculate" >Calculate</button>
+
+            </td>
+        </tr>
+
+    </table>
 
     <!-- 
 
 <h2 class="h2result">Result</h2>
-<table cellpadding="3" cellspacing="1">
-    <tr>
-        <td class="verybigtext">Tip:</td>
-        <td align="right" class="verybigtext">$54.25</td>
-    </tr>
-    <tr>
-        <td class="verybigtext">Total Amount:</td>
-        <td align="right" class="verybigtext">$209.25</td>
-    </tr>
-    <tr>
-        <td class="verybigtext">Tip Per Person:</td>
-        <td align="right" class="verybigtext">$18.08</td>
-    </tr>
-    <tr>
-        <td class="verybigtext">Total Per Person:</td>
-        <td align="right" class="verybigtext">$69.75</td>
-    </tr>
-</table>
+
 <table class="panel" >
     <tr>
         <td><form action="/tip-calculator.html#sharebill">
@@ -128,7 +131,7 @@
 			<td align="right">
                 <input type="text" name="billamount" class="bigtext inlong indollar" value="155" onKeyUp="iptfieldCheck(this, 'r', 'pn');">
             </td>
-			<td>&nbsp;</td>
+			<td>&nbsp;</td>  //non breaking space
 		</tr>
 		<tr>
 			<td class="bigtext">Tip %</td>

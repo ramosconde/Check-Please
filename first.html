@@ -1,0 +1,67 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script> -->
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="CSS/static.css">
+    <!-- <link rel="stylesheet" href="CSS/relative.css">
+  <link rel="stylesheet" href="CSS/absolute.css">
+  <link rel="stylesheet" href="CSS/fixed.css">
+  <link rel="stylesheet" href="CSS/zindex.css">
+  <link rel="stylesheet" href="CSS/invisible.css"> -->
+    <!-- <script src="JS/main.js"></script> -->
+    <!-- <script type="text/javascript" src="JS/main.js"></script> -->
+
+
+    <script>
+        function calculate() {
+            var total = parseFloat(document.getElementById("totalBill").value);
+            var percent = parseFloat(document.getElementById("tipPercent").value);
+            var guests = parseFloat(document.getElementById("numOfGuests").value);
+
+            var result1 = (total / 100) * percent;              //total tip is
+            var result2 = ((total / 100) * percent) / guests;     //tip per person
+            var result3 = (total / guests) + result1;           //tip and bill per person
+            var result4 = (total + ((total / 100) * percent));  //total bill + tip is
+
+            if (!isNaN(result1)) {
+                document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
+                document.getElementById("tip-per-person").innerHTML = "The tip per person is $" + result2;
+                document.getElementById("total-per-person").innerHTML = "The total per person is $" + result3;
+                document.getElementById("total-bill").innerHTML = "The total bill is $" + result4;
+
+            }
+
+        }
+
+
+    </script>
+
+</head>
+
+
+
+<body>
+    
+    <h1> Check Please !!</h1>
+    <h3 id="total-tip"></h3>
+    <h3 id="tip-per-person"></h3>
+    <h3 id="total-per-person"></h3>
+    <h3 id="total-bill"></h3>
+
+    Total <input type="text" id="totalBill">
+    <br>
+    Tip % <input type="text" id="tipPercent">
+    <br>
+    Number of Guests <input type="text" id="numOfGuests">
+    <br>
+
+    <input type="button" onclick="calculate();" value="Calculate">
+
+    
