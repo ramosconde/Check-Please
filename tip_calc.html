@@ -1,0 +1,158 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script> -->
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="CSS/static.css">
+    <!-- <link rel="stylesheet" href="CSS/relative.css">
+  <link rel="stylesheet" href="CSS/absolute.css">
+  <link rel="stylesheet" href="CSS/fixed.css">
+  <link rel="stylesheet" href="CSS/zindex.css">
+  <link rel="stylesheet" href="CSS/invisible.css"> -->
+    <script src="JS/static.js"></script>
+
+    <script>
+        function calculate()
+        {
+            var total=parseFloat(document.getElementById("totalBill").value);
+            var percent=parseFloat(document.getElementById("tipPercent").value);
+            var guests=parseFloat(document.getElementById("numOfGuests").value);
+
+            var result1 = (total/100)*percent;              //total tip is
+            var result2 = ((total/100)*percent)/guests;     //tip per person
+            var result3 = (total/guests)+result1;           //tip and bill per person
+            var result4 = (total + ((total/100)*percent));  //total bill + tip is
+
+            if(!isNaN(result1))
+            {   
+                document.getElementById("total-tip").innerHTML="The total tip is $"+ result1;
+                document.getElementById("tip-per-person").innerHTML="The tip per person is $"+ result2;
+                // console.log(new Intl.NumberFormat('de-US', { style: 'currency', currency: 'USD' }).format(result2));
+                document.getElementById("total-per-person").innerHTML="The total per person is $"+ result3;
+                document.getElementById("total-bill").innerHTML="The total bill is $"+ result4;
+
+            }
+
+            else
+            {
+                //error msg
+            }
+
+        }
+
+
+    </script>
+
+</head>
+
+
+
+<body>
+    <scritp>
+
+    </scritp>
+    <h1> Check Please !!</h1>
+    <h3 id="total-tip"></h3>
+    <h3 id="tip-per-person"></h3>
+    <h3 id="total-per-person"></h3>
+    <h3 id="total-bill"></h3>
+
+
+
+    Total <input type="text" id="totalBill">
+    <br>
+    Tip % <input type="text" id="tipPercent">
+    <br>
+    Number of Guests <input type="text" id="numOfGuests">
+    <br>
+
+    <input type="button" onclick="calculate();" value="Calculate">
+    <h3 id="result"></h3>
+
+
+
+    <table cellpadding="3" cellspacing="1">
+        <tr>
+            <td class="verybigtext">Tip Per Person:</td>
+            <td align="right" class="verybigtext"></td>
+        </tr>
+        <tr>
+            <td class="verybigtext">Total Per Person:</td>
+            <td align="right" class="verybigtext"></td>
+        </tr>
+        <tr>
+            <td class="verybigtext">Total Bill:</td>
+            <td align="right" class="verybigtext"></td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+        </tr>
+    </table>
+
+
+
+    <!-- 
+
+<h2 class="h2result">Result</h2>
+<table cellpadding="3" cellspacing="1">
+    <tr>
+        <td class="verybigtext">Tip:</td>
+        <td align="right" class="verybigtext">$54.25</td>
+    </tr>
+    <tr>
+        <td class="verybigtext">Total Amount:</td>
+        <td align="right" class="verybigtext">$209.25</td>
+    </tr>
+    <tr>
+        <td class="verybigtext">Tip Per Person:</td>
+        <td align="right" class="verybigtext">$18.08</td>
+    </tr>
+    <tr>
+        <td class="verybigtext">Total Per Person:</td>
+        <td align="right" class="verybigtext">$69.75</td>
+    </tr>
+</table>
+<table class="panel" >
+    <tr>
+        <td><form action="/tip-calculator.html#sharebill">
+	<table align="center">
+		<tr>
+			<td class="bigtext">Price</td>
+			<td align="right">
+                <input type="text" name="billamount" class="bigtext inlong indollar" value="155" onKeyUp="iptfieldCheck(this, 'r', 'pn');">
+            </td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="bigtext">Tip %</td>
+			<td align="right">
+                <input type="text" name="tippct" class="bigtext inlong inpct" value="35" onKeyUp="iptfieldCheck(this, 'r', 'pn');">
+            </td>
+		</tr>
+		<tr>
+			<td class="bigtext">Number of People</td>
+			<td align="right">
+                <input type="text" name="numberofpeople" class="bigtext inlong" value="3" onKeyUp="iptfieldCheck(this, 'r', 'pi');">
+            </td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+            <input name="ctype" value="2" type="hidden">
+            <input type="image" src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin-top:10px;">
+            https://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg
+            data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgd2lkdGg9IjEzOCIgaGVpZ2h0PSI0MCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMzYuNTEyIDEwLjU4MyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyR3JhZGllbnQ4MzQiIHgxPSI2LjczOTkiIHgyPSI2Ljc2NjQiIHkxPSIyOTguNjkiIHkyPSIzMDMuNDEiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMi40ODM4IDAgMCAyLjIwMzUgMS41MTU4IC0zNzEuNzIpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agc3RvcC1jb2xvcj0iIzUxODQyNyIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzQ3NzIyMyIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PG1ldGFkYXRhPjxyZGY6UkRGPjxjYzpXb3JrIHJkZjphYm91dD0iIj48ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD48ZGM6dHlwZSByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIi8+PGRjOnRpdGxlLz48L2NjOldvcms+PC9yZGY6UkRGPjwvbWV0YWRhdGE+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtMjg2LjQyKSI+PHJlY3QgeT0iMjg2LjQyIiB3aWR0aD0iMzYuNTEyIiBoZWlnaHQ9IjEwLjU4MyIgZmlsbD0idXJsKCNsaW5lYXJHcmFkaWVudDgzNCkiIHN0cm9rZS13aWR0aD0iLjYxODk3Ii8+PHRleHQgeD0iNC4wMTYxMjA0IiB5PSIyOTMuMjM5ODQiIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0LjU4NjFweCIgZm9udC13ZWlnaHQ9ImJvbGQiIGxldHRlci1zcGFjaW5nPSIwcHgiIHN0cm9rZS13aWR0aD0iLjI2NDU4IiB3b3JkLXNwYWNpbmc9IjBweCIgc3R5bGU9ImZvbnQtZmVhdHVyZS1zZXR0aW5nczpub3JtYWw7Zm9udC12YXJpYW50LWNhcHM6bm9ybWFsO2ZvbnQtdmFyaWFudC1saWdhdHVyZXM6bm9ybWFsO2ZvbnQtdmFyaWFudC1udW1lcmljOm5vcm1hbDtsaW5lLWhlaWdodDoxLjI1IiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iNC4wMTYxMjA0IiB5PSIyOTMuMjM5ODQiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0LjU4NjFweCIgZm9udC13ZWlnaHQ9ImJvbGQiIHN0cm9rZS13aWR0aD0iLjI2NDU4IiBzdHlsZT0iZm9udC1mZWF0dXJlLXNldHRpbmdzOm5vcm1hbDtmb250LXZhcmlhbnQtY2Fwczpub3JtYWw7Zm9udC12YXJpYW50LWxpZ2F0dXJlczpub3JtYWw7Zm9udC12YXJpYW50LW51bWVyaWM6bm9ybWFsIj5DYWxjdWxhdGU8L3RzcGFuPjwvdGV4dD48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOS4zNzA2IC0xMi4xOTIpIj48Y2lyY2xlIGN4PSI0MC41OTEiIGN5PSIzMDMuOSIgcj0iMi45MTA0IiBmaWxsPSIjYWRjMzlmIiBzdHJva2Utd2lkdGg9Ii4xOTYxNyIvPjxwYXRoIHRyYW5zZm9ybT0ibWF0cml4KC0uMDAxODY2NSAtLjgxMDAxIC40Nzk3NyAtLjAwMTEwNDUgLTk5LjE5NSAzMjEuMzkpIiBkPSJtMjEuMjU4IDI5NS41NC0yLjcxMzktNC43MDA2aDUuNDI3OHoiIGZpbGw9IiNmNmY4ZjUiIHN0cm9rZS13aWR0aD0iLjI2NDU4Ii8+PC9nPjwvZz48L3N2Zz4NCg==
+            </td>
+        
+        </tr>
+	</table> -->
+
+</body>
+
+</html>
