@@ -1,6 +1,15 @@
 /*
  * Static: Default positioning
  */
+ p::after { 
+	content: " - Remember this";
+	background-color: yellow;
+	color: red;
+	font-weight: bold;
+  }
+  p::before {
+	content: "Read this -";
+  }
 
 .box-set {
   position: relative;
@@ -13,6 +22,12 @@
   height: 150px;
   background: #2db34a;
   border: 2px solid black;
+}
+
+.borderbox{
+ border-style:solid;
+ border-color:#287EC7;
+ border: 1px solid green;
 }
 
 
@@ -49,7 +64,7 @@ input[type=tel]:focus,
 input[type=number]:focus,
 input[type=color]:focus,
 input[type=email]:focus, select:focus {
-	border: 1px solid #993300;
+	border: 2px solid #993300;
 	box-shadow: 1px 1px 2px #ba673d;
 	font-size:16px;
 }
@@ -160,8 +175,8 @@ input[type=image],input[type=image]:hover,input[type=image]:focus{
 	padding-left: 11px;
 }
 .inpct{
-	background:#fff url('/img/svg/pct.svg') right 2px center no-repeat;
-	padding-right: 18px;
+	background:#fff url('/img/svg/pct.svg') 2px center no-repeat;
+	padding-right: 11px;
 }
 .innormal{text-align:right;width: 90px;}
 .in4char{text-align:right;width: 58px;}
@@ -479,7 +494,14 @@ fieldset div:hover{
 #calinfoout .calinfofunc{color:#185290;font-weight:bold;background-color:#C8D8E8;height:23px;padding-bottom:1px;}
 #printit{width: 80px;float:right;text-align:right;}
 .panel2{background-color:#eeeeee;padding: 5px;border-right:1px solid #bbbbbb;border-bottom:1px solid #bbbbbb;border-left:1px solid #bbbbbb;}
-.h2result{background:#518428;color:#fff;border:1px solid #518428;padding: 5px;margin-top:3px;font-size:22px;font-weight: normal;}
+.h2result{
+  background:#518428;
+  color:#fff;
+  border:1px solid #518428;
+  padding: 5px;
+  margin-top:3px;
+  font-size:22px;
+  font-weight: normal;}
 .h3head{margin-bottom: 2px;}
 .sectionlists{}
 .sectionlists div{padding-bottom: 5px;}

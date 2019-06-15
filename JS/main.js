@@ -19,3 +19,44 @@
     }
 
 }
+var demo
+
+
+function displayErrMsg() {
+    // iptErrObj.style.visibility = 'visible';
+    // iptInputObj.style.borderColor = "red";
+    // document.getElementById("demo").innerHTML = "Numbers Only";
+
+}
+
+function charcheck(evt) {
+    var ch = String.fromCharCode(evt.which);
+
+    if (!( /^[+]?[0-9]+\.[0-9]+$/.test(ch))) {
+        evt.preventDefault();
+        // document.getElementById("demo").innerHTML = "Numbers Only";
+        // var a = "<p style=’color:red;’> Numbers Only </p>";
+        // document.write(a);
+        displayErrMsg();
+    }
+
+}
+console.log("this is a test")
+
+d3.select("#btn").on("click", handleClick);
+
+function handleClick(){
+    console.log("hello");
+
+}
+
+function checkforempty() {
+    if (document.getElementById("totalBill").value == "")
+    alert("Please Enter Bill Amount");
+    document.getElementById("totalBill").style.borderColor = "red" ;
+    return false;
+    console.log(totalBill)
+
+}
+
+

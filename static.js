@@ -1,11 +1,10 @@
 console.group('currency');
-var formatter = new Intl.NumberFormat('en-US',
-    {
-        style: 'currency',
-        currency: 'USD',
-        maximumFractionDigits: 2,
-        useGrouping: true,
-    }).format(result2);
+// var formatter = new Intl.NumberFormat('en-US',
+//     {
+//         style: 'currency',
+//         currency: 'USD',
+//         useGrouping: true,
+//     });
 
 function calculate() {
     var total = parseFloat(document.getElementById("totalBill").value);
