@@ -6,8 +6,22 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <title>Tip Calculator</title>
     <link rel="stylesheet" href="CSS/static.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js"></script>
-    <script type="text/javascript" src="JS/main2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+    
+<script>
+    function checkforempty() {
+        console.log("check for empty works")
+        if (document.getElementById("totalBill").value == ""){
+        alert("Please Enter Bill Amount");
+        document.getElementById("totalBill").style.borderColor = "red" ;
+        return false;
+        }
+}
+
+
+</script>
 
 </head>
 
@@ -55,11 +69,12 @@
     
 
 
-    <table class="panel"  align="center">
+    <table class="panel"  align="center" onsubmit="return checkforempty()">
         <tr>
             <td class="bigtext">Total</td>
-            <td align="right">
-                <input type="text" min="1" id="totalBill" class="bigtext inlong indollar" value="" placeholder="12345.67" onkeyup="charcheck(event)";>
+            <td align="right" onsubmit="return checkforempty()">
+                <input type="number" min="1" step=".01" id="totalBill"  oninput="validate(this)"  class="bigtext inlong indollar" value=""  onkeyup="return charcheck(event)">
+                   <!-- value="" onkeyup="return charcheck(event)";>         oninput="validate(this)"    -->
             </td>
             <!-- //non breaking space -->
 			<td>&nbsp;</td> 
@@ -70,7 +85,6 @@
                 <input type="number" min="1" id="tipPercent" class="bigtext inlong inpct" value="" onkeyup="charcheck(event)";>
                  <!-- onkeypress="charcheck(event);"> -->
             </td>
-
         </tr>
         <tr>
             <td class="bigtext">Number of People</td>
@@ -80,13 +94,15 @@
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <!-- <input type="button" onclick="calculate();" value="Calculate"> -->
-                <button id="#btn">Calculate</button>
+                <input type="submit" onclick="calculate();" value="Calculate" >
+                <!-- <button id="#btn">Calculate</button> -->
 
             </td>
         </tr>
 
     </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js"></script>
+    <script type="text/javascript" src="JS/main2.js"></script>
 
 
 </body>
