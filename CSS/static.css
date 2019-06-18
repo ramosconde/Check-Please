@@ -171,11 +171,11 @@ input[type=image],input[type=image]:hover,input[type=image]:focus{
 }
 
 .indollar{
-	background:#fff url('/img/svg/dollar.svg') 2px center no-repeat;
+	background:#fff url(/img/svg/dollar.svg) 2px center no-repeat;
 	padding-left: 11px;
 }
 .inpct{
-	background:#fff url('/img/svg/pct.svg') 2px center no-repeat;
+	background:#fff url(/img/svg/pct.svg) 2px center no-repeat;
 	padding-right: 11px;
 }
 .innormal{text-align:right;width: 90px;}
@@ -448,7 +448,7 @@ fieldset div{
 	border-radius: 3px;
 	text-decoration: none;
 }
-fieldset div:hover{
+ƒfieldset div:hover{
 	background:#c47751;
 	color: #fff;
 }
