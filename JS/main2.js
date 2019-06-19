@@ -6,11 +6,10 @@
 //     console.log("hello button");
 // }
 
-// d3.select("#btn").on("click", calculate);
-// function handleClick(){
-//     d3.event.preventDefault();
-//     console.log("hello btn");
-// }
+// d3.select(".yes").on("click", billSplitY);
+
+// d3.select(".no").on("click", billSplitN);
+
 
 function charcheck(evt) {
     var ch = String.fromCharCode(evt.which);
@@ -27,6 +26,8 @@ function charcheck(evt) {
 }
 
 function calculate() {
+    numOfGuests = 1;
+    console.log(numOfGuests)
     var total = parseFloat(document.getElementById("totalBill").value);
     var percent = parseFloat(document.getElementById("tipPercent").value);
     var guests = parseFloat(document.getElementById("numOfGuests").value);
@@ -39,13 +40,6 @@ function calculate() {
     console.log(result3);
     var result4 = ((total + ((total / 100) * percent))).toFixed(2);  //total bill + tip is
     console.log(result4);
-
-
-    // document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
-    // document.getElementById("tip-per-person").innerHTML = "The tip P/P is $" + result2;
-    // document.getElementById("total-per-person").innerHTML = "Total charge + tip P/P is $" + result3;
-    // document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
-
 
     if (document.getElementById("totalBill").value == "") {
         alert("Please Enter Bill Amount");
@@ -77,18 +71,25 @@ function calculate() {
         document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
         // moreThanOneGuest.apply(result1, result2, result3, result4);
     }
-
-    // var total = parseFloat(document.getElementById("totalBill").value);
-    // var percent = parseFloat(document.getElementById("tipPercent").value);
-    // var guests = parseFloat(document.getElementById("numOfGuests").value);
-
 }
-
 
 var validate = function(e) {
     var t = e.value;
     e.value = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
   }
+
+//  var billSplitY = function (){
+//     running = "http://tip_calc.html"
+
+// }
+function billSplitY(){
+    window.location = href="tip_calc.html"
+    console.log("Yes, it works")
+}
+function billSplitN(){
+    window.location = href="tip_calc_n.html"
+    console.log("No, it works")
+}
 
 function oneGuest(result1, result4){
     document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
