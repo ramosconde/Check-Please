@@ -77,23 +77,13 @@ var validate = function(e) {
     var t = e.value;
     e.value = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
   }
-
-//  var billSplitY = function (){
-//     running = "http://tip_calc.html"
-
-// }
 function billSplitY(){
-    window.location = href="tip_calc.html"
+    window.location = href="tip_calc_y.html"
     console.log("Yes, it works")
 }
 function billSplitN(){
     window.location = href="tip_calc_n.html"
     console.log("No, it works")
-}
-
-function oneGuest(result1, result4){
-    document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
-    document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
 }
 function moreThanOneGuest(result1, result2, result3, result4) {
     document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
