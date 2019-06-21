@@ -9,11 +9,19 @@
 // d3.select(".yes").on("click", billSplitY);
 
 // d3.select(".no").on("click", billSplitN);
+function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
 
-
+         return true;
+      }
+    
 function charcheck(evt) {
     var ch = String.fromCharCode(evt.which);
-    if (( /^[+]?[0-9]{1,3}(?:[0-9]*(?:[.,][0-9]{1})?|(?:,[0-9]{3})*(?:\.[0-9]{1,2})?|(?:\.[0-9]{3})*(?:,[0-9]{1,2})?)$/.test(ch))) {
+    // if (( /^[+]?[0-9]{1,3}(?:[0-9]*(?:[.,][0-9]{1})?|(?:,[0-9]{3})*(?:\.[0-9]{1,2})?|(?:\.[0-9]{3})*(?:,[0-9]{1,2})?)$/.test(ch))) {
+    if (!(/^[0-9]$/)) {
         evt.preventDefault();
         // console.log("charcheck does not work")
         return false;
@@ -77,6 +85,7 @@ var validate = function(e) {
     var t = e.value;
     e.value = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
   }
+  
 function billSplitY(){
     window.location = href="tip_calc_y.html"
     console.log("Yes, it works")
