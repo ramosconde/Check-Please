@@ -1,11 +1,4 @@
 
-
-// d3.select("button").on("click", handleClick);
-// function handleClick() {
-//     d3.event.preventDefault();
-//     console.log("hello button");
-// }
-
 // d3.select(".yes").on("click", billSplitY);
 
 // d3.select(".no").on("click", billSplitN);
@@ -40,6 +33,13 @@ function calculate() {
     var percent = parseFloat(document.getElementById("tipPercent").value);
     var guests = parseFloat(document.getElementById("numOfGuests").value);
 
+    if (document.getElementById("numOfGuests").value == "") {
+        var guests = 1; 
+    }else if (document.getElementById("numOfGuests").value == 1){
+        var guests = document.getElementById("numOfGuests").value;
+    }else if (document.getElementById("numOfGuests").value >= 2) {
+            var guests = document.getElementById("numOfGuests").value;
+    }
     var result1 = ((total / 100) * percent).toFixed(2);            //total tip is
     console.log(result1);
     var result2 = (((total / 100) * percent) / guests).toFixed(2);     //tip per person
@@ -59,26 +59,39 @@ function calculate() {
         document.getElementById("tipPercent").style.borderColor = "red" ;
     return false;
     } 
-    if (document.getElementById("numOfGuests").value == "") {
-        var guests = 1;      // + (document.getElementById("numOfGuests").value);
-        document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
-        document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
-        // oneGuest.apply(result1, result4);
-    }
-    if (document.getElementById("numOfGuests").value == 1){
-        var guests = document.getElementById("numOfGuests").value;
-        document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
-        document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
-        // oneGuest.apply(result1, result4);
-    }
-    if (document.getElementById("numOfGuests").value >= 2) {
-        var guests = document.getElementById("numOfGuests").value;
-        document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
-        document.getElementById("tip-per-person").innerHTML = "The tip P/P is $" + result2;
-        document.getElementById("total-per-person").innerHTML = "Total charge + tip P/P is $" + result3;
-        document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
+    // if (document.getElementById("numOfGuests").value == "") {
+    //     var guests = 1;      // + (document.getElementById("numOfGuests").value);
+    //     document.getElementById("totalTip").innerHTML = result1;
+    //     document.getElementById("tipPP").innerHTML = result2;
+    //     document.getElementById("billTipPP").innerHTML = result3;
+    //     document.getElementById("totalBillTip").innerHTML = result4;
+
+    //     // document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
+    //     // document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
+    //     // oneGuest.apply(result1, result4);
+    // } else if (document.getElementById("numOfGuests").value == 1){
+    //     var guests = document.getElementById("numOfGuests").value;
+    //     document.getElementById("totalTip").innerHTML = result1;
+    //     document.getElementById("tipPP").innerHTML = result2;
+    //     document.getElementById("billTipPP").innerHTML = result3;
+    //     document.getElementById("totalBillTip").innerHTML = result4;
+
+    //     // document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
+    //     // document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
+    //     // oneGuest.apply(result1, result4);
+    // }else if (document.getElementById("numOfGuests").value >= 2) {
+    //     var guests = document.getElementById("numOfGuests").value;
+        document.getElementById("totalTip").innerHTML = result1;
+        document.getElementById("tipPP").innerHTML = result2;
+        document.getElementById("billTipPP").innerHTML = result3;
+        document.getElementById("totalBillTip").innerHTML = result4;
+
+        // document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
+        // document.getElementById("tip-per-person").innerHTML = "The tip P/P is $" + result2;
+        // document.getElementById("total-per-person").innerHTML = "Total charge + tip P/P is $" + result3;
+        // document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
         // moreThanOneGuest.apply(result1, result2, result3, result4);
-    }
+    // }
 }
 
 var validate = function(e) {
@@ -94,10 +107,26 @@ function billSplitN(){
     window.location = href="tip_calc_n.html"
     console.log("No, it works")
 }
-function moreThanOneGuest(result1, result2, result3, result4) {
-    document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
-    document.getElementById("tip-per-person").innerHTML = "The tip P/P is $" + result2;
-    document.getElementById("total-per-person").innerHTML = "Total charge + tip P/P is $" + result3;
-    document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
-}
+// function moreThanOneGuest(result1, result2, result3, result4) {
+//     document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
+//     document.getElementById("tip-per-person").innerHTML = "The tip P/P is $" + result2;
+//     document.getElementById("total-per-person").innerHTML = "Total charge + tip P/P is $" + result3;
+//     document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
+// }
    
+function reset(){
+
+    var id= document.getElementById("id");
+    var name= document.getElementById("name");
+    var gender= document.getElementById("gender");
+    var address= document.getElementById("address");
+    var email = document.getElementById("email");
+    var table = document.getElementById("myTableData");
+
+    id.value="";
+    name.value="";
+    gender.value="";
+    address.value="";
+    email.value="";
+}
+

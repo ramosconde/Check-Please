@@ -16,12 +16,27 @@
 
 
 
-<body>
+<body class="bg-image" background="PICS/charcutery-board.jpg">
     <h1> Check Please !!</h1>
     <h3 id="total-tip"></h3>
     <!-- <h3 id="tip-per-person"></h3>
     <h3 id="total-per-person"></h3> -->
     <h3 id="total-bill"></h3>
+
+
+    <table name="resultsTable" cellpadding="3" cellspacing="1">
+            <tbody>
+                <tr>
+                    <td class="verybigtext">The total tip is $ </td>
+                    <td name="totalTip" id="totalTip" align="right" class="verybigtext"></td>
+                </tr>
+                <tr>
+                    <td class="verybigtext">The total charge + total tip is $</td>
+                    <td  name="totalBillTip" id="totalBillTip" align="right" class="verybigtext"></td>
+                </tr>
+            </tbody>
+        </table>
+
 
     <table class="panel"  align="center" >
         <tr>

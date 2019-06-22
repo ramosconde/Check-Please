@@ -12,16 +12,30 @@
 <p>The Tip Calculator calculates tip amount for various percentages of the cost of the service, and also provides a total amount that includes the tip. In the US, a tip of 15% of the before tax meal price is customary. If the sales tax rate in an area is between 6% and 9%, a tip of 14% of the after-tax price is typically expected.</p>
 
 
-<table class="panel"><tbody><tr><td><form action="/tip-calculator.html">
+<table class="panel">
+	<tbody>
+	<tr>
+		<td>
+			<form action="/tip-calculator.html">
 	<table align="center">
-		<tbody><tr>
-			<td align="center"><b>Price: </b><input type="text" name="serviceprice" class="inlonger indollar" value="55" onkeyup="iptfieldCheck(this, 'r', 'pn');"></td>
+		<tbody>
+		<tr>
+		<td align="center"><b>Price: </b>
+			<input type="text" name="serviceprice" class="inlonger indollar" value="55" onkeyup="iptfieldCheck(this, 'r', 'pn');">
+		</td>
 		</tr>
 		<tr>
-			<td align="center"><input name="ctype" value="1" type="hidden"><input type="image" src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin-top:10px;"></td>
+			<td align="center"><input name="ctype" value="1" type="hidden">
+			<input type="image" src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin-top:10px;">
+		</td>
 		</tr>
-	</tbody></table>
-</form></td></tr></tbody></table>
+	</tbody>
+</table>
+</form>
+</td>
+</tr>
+</tbody>
+</table>
 
 <a name="sharebill"></a>
 <br><h2>Shared Bill Tip Calculator</h2>
@@ -44,7 +58,8 @@
 		<tr>
 			<td colspan="2" align="center"><input name="ctype" value="2" type="hidden"><input type="image" src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin-top:10px;"></td>
 		</tr>
-	</tbody></table>
+	</tbody>
+</table>
 </form></td></tr></tbody></table>
 
 <br>
