@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="CSS/static.css">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js"></script>
     <!-- <script type="text/javascript" src="JS/main2.js"></script> -->
 
@@ -17,25 +18,26 @@
 
 
 <body class="bg-image" background="PICS/charcutery-board.jpg">
-    <h1> Check Please !!</h1>
+    <!-- <h1> Check Please !!</h1>
     <h3 id="total-tip"></h3>
-    <!-- <h3 id="tip-per-person"></h3>
+    <h3 id="tip-per-person"></h3>
     <h3 id="total-per-person"></h3> -->
-    <h3 id="total-bill"></h3>
+    <!-- <h3 id="total-bill"></h3> -->
+ -->
 
-
-    <table name="resultsTable" cellpadding="3" cellspacing="1">
-            <tbody>
-                <tr>
-                    <td class="verybigtext">The total tip is $ </td>
-                    <td name="totalTip" id="totalTip" align="right" class="verybigtext"></td>
-                </tr>
-                <tr>
-                    <td class="verybigtext">The total charge + total tip is $</td>
-                    <td  name="totalBillTip" id="totalBillTip" align="right" class="verybigtext"></td>
-                </tr>
-            </tbody>
-        </table>
+ <table  class="panel"  align="center" name="resultsTable1" id="resultsTable1" cellpadding="5" cellspacing="3"> 
+        <!-- cellpadding="3" cellspacing="1"> -->
+        <tbody>
+            <tr>
+                <td class="verybigtext">The total tip is</td>
+                <td name="totalTip" id="totalTip" align="right" class="verybigtext"></td>
+            </tr>
+            <tr>
+                <td class="verybigtext">The total charge + total tip is</td>
+                <td  name="totalBillTip" id="totalBillTip" align="right" class="verybigtext"></td>
+            </tr>
+        </tbody>
+    </table>
 
 
     <table class="panel"  align="center" >
@@ -57,8 +59,8 @@
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <input type="submit" onclick="calculate();" value="Calculate" >
-                <!-- <button id="#btn">Calculate</button> -->
+                <input type="submit" onclick="calculate(), show();" value="Calculate" >
+                    <!-- <button id="#btn">Calculate</button> -->
             </td>
         </tr>
     </table> 

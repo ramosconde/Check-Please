@@ -14,9 +14,8 @@ function charcheck(evt) {
 }
 
 function calculate() {
-    numOfGuests = 1;
-    console.log(numOfGuests);
-    //calculate input amounts
+  
+//receive input amounts
     var total = parseFloat(document.getElementById("totalBill").value);
     var percent = parseFloat(document.getElementById("tipPercent").value);
 
@@ -38,6 +37,11 @@ function calculate() {
         document.getElementById("tipPercent").style.borderColor = "red" ;
     return false;
     } 
+
+ //formats calculated results to US currency
+ var newFormat1 = (new Intl.NumberFormat("en-US",{style: "currency", currency: "USD", useGrouping: true}).format(result1))
+ var newFormat4 = (new Intl.NumberFormat("en-US",{style: "currency", currency: "USD", useGrouping: true}).format(result4))
+
 //display calculated results on the correct table cell
     document.getElementById("totalTip").innerHTML = result1;
     document.getElementById("totalBillTip").innerHTML = result4;
@@ -60,8 +64,7 @@ function billSplitN(){
     console.log("No, it works")
 }
 
-
-// function oneGuest(result1, result4){
-//     document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
-//     document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
-// }
+// show hidden resultsTable
+function show() {
+    document.getElementById("resultsTable1").style.display="table";
+}
