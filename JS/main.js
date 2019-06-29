@@ -25,18 +25,6 @@ function calculate() {
     var result4 = ((total + ((total / 100) * percent))).toFixed(2);  //total bill + tip is
     console.log(result4);
 //
-// check for empty "totalBill" input field at submit
-    if (document.getElementById("totalBill").value == "") {
-        alert("Please Enter Bill Amount");
-        document.getElementById("totalBill").style.borderColor = "red" ;
-    return false;
-        }
-// check for empty "tipPercent" input field at submit
-    if (document.getElementById("tipPercent").value == "") {
-        alert("Please Enter Tip %");
-        document.getElementById("tipPercent").style.borderColor = "red" ;
-    return false;
-    } 
 
  //formats calculated results to US currency
  var newFormat1 = (new Intl.NumberFormat("en-US",{style: "currency", currency: "USD", useGrouping: true}).format(result1))
@@ -64,7 +52,42 @@ function billSplitN(){
     console.log("No, it works")
 }
 
-// show hidden resultsTable
-function show() {
+// display resultsTable table when click
+function showResults() {
+    document.getElementById("totalBill").style.borderColor = "blue" ;
+    document.getElementById("tipPercent").style.borderColor = "blue" ;
     document.getElementById("resultsTable1").style.display="table";
+
+}
+
+function chkForEmpty() {
+// error check for empty totalBill input field
+    if (document.getElementById("totalBill").value == "") {
+        alert("Please Enter Bill Amount");
+        document.getElementById("totalBill").style.borderColor = "red" ;
+        document.getElementById("totalBill").focus();
+
+    return false;
+
+    } 
+
+// error check for empty tipPercent field
+    if (document.getElementById("tipPercent").value == "") {
+        alert("Please Enter Tip %");
+        document.getElementById("tipPercent").style.borderColor = "red" ;
+        document.getElementById("tipPercent").focus();
+    return false;
+    } 
+showResults();
+
+}
+
+// reset button
+function reset(){
+    window.location = href="tip_calc_n.html"
+}
+
+// home button
+function goHome(){
+    window.location = href="main-page.html"
 }

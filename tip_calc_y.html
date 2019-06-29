@@ -24,8 +24,14 @@
     <h3 id="tip-per-person"></h3>
     <h3 id="total-per-person"></h3>
     <h3 id="total-bill"></h3> -->
-
-   
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+        <div>
+            <div id="dialogboxhead"></div>
+            <div id="dialogboxbody"></div>
+            <div id="dialogboxfooter"></div>
+        </div>
+</div>
 
     <table  class="panel"  align="center" name="resultsTable" id="resultsTable" cellpadding="5" cellspacing="3"> 
         <!-- cellpadding="3" cellspacing="1"> -->
@@ -56,24 +62,31 @@
         <tr>
             <td class="bigtext">Total</td>
             <td align="right">  
-            <input type="number" min="1" step=".01" id="totalBill" oninput="validate(this)" class="bigtext inlong" value="" onkeyup="clearError();">
+            <input type="number" min="1" step=".01" id="totalBill" oninput="validate(this)" class="bigtext inlong" value=""> 
+                 <!-- onblur ="return errorEmptyBill();"> -->
+            <!-- <div class="inputErrMsg" id="billamountifcErr" style="visibility: visible;">Please format 12345.99</div> -->
+            <script>document.getElementById("totalBill").focus();</script>
             </td>
         </tr>
         <tr>
             <td class="bigtext">Tip %</td>
             <td align="right">
                 <input type="number" min="1" step=".01" id="tipPercent" oninput="validate(this)" class="bigtext inlong" value="">
+                <!-- <script>document.getElementById("tipPercent").focus();</script> -->
             </td>
         </tr>
         <tr>
             <td class="bigtext">Number of People</td>
             <td align="right">
                 <input type="number" min="1" step="1" id="numOfGuests" class="bigtext inlong" value="" onkeypress="return isNumberKey(event)" placeholder="1">
+                <!-- <script>document.getElementById("numOfGuests").focus();</script> -->
             </td>
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <input type="submit" onclick="calculate(), show();" value="Calculate" >
+                <input type="reset" onclick="reset()"; value="Reset">
+                <input type="reset" onclick="goHome()"; value="Home">
+                <input type="submit" onclick="chkForEmpty(), calculate();" value="Calculate" >
                 <!-- <button id="#btn">Calculate</button> -->
             </td>
         </tr>

@@ -46,6 +46,7 @@
             <td align="right" onsubmit="return checkforempty()">
                 <!-- <input type="number" min="1" step=".01" id="totalBill"  oninput="validate(this)"  class="bigtext inlong indollar" value=""  onkeyup="return charcheck(event)"> -->
             <input type="number" min="1" step=".01" id="totalBill" oninput="validate(this)" class="bigtext inlong" value="" >
+            <script>document.getElementById("totalBill").focus();</script>
             </td>
             <!-- //non breaking space -->
 			<td>&nbsp;</td>
@@ -55,11 +56,14 @@
             <td align="right">
                 <input type="number" min="1" step=".01" id="tipPercent" oninput="validate(this)" class="bigtext inlong" value="">
                  <!-- onkeypress="charcheck(event);"> -->
+                 <!-- <script>document.getElementById("tipPercent").focus();</script> -->
             </td>
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <input type="submit" onclick="calculate(), show();" value="Calculate" >
+                <input type="reset" onclick="reset()"; value="Reset">
+                <input type="reset" onclick="goHome()"; value="Home">
+                <input type="submit" onclick="chkForEmpty(), calculate();" value="Calculate" >
                     <!-- <button id="#btn">Calculate</button> -->
             </td>
         </tr>
