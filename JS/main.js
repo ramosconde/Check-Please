@@ -1,17 +1,17 @@
 
-function charcheck(evt) {
-    var ch = String.fromCharCode(evt.which);
-    if (( /^[+]?[0-9]{1,3}(?:[0-9]*(?:[.,][0-9]{1})?|(?:,[0-9]{3})*(?:\.[0-9]{1,2})?|(?:\.[0-9]{3})*(?:,[0-9]{1,2})?)$/.test(ch))) {
-        evt.preventDefault();
-        // console.log("charcheck does not work")
-        return false;
-    }
-    else{
-        // console.log("charcheck works")
-        evt.preventDefault();
-        return false;
-    }
-}
+// function charcheck(evt) {
+//     var ch = String.fromCharCode(evt.which);
+//     if (( /^[+]?[0-9]{1,3}(?:[0-9]*(?:[.,][0-9]{1})?|(?:,[0-9]{3})*(?:\.[0-9]{1,2})?|(?:\.[0-9]{3})*(?:,[0-9]{1,2})?)$/.test(ch))) {
+//         evt.preventDefault();
+//         // console.log("charcheck does not work")
+//         return false;
+//     }
+//     else{
+//         // console.log("charcheck works")
+//         evt.preventDefault();
+//         return false;
+//     }
+// }
 
 function calculate() {
   

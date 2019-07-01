@@ -1,7 +1,7 @@
 
 
 
-// restrict the nomOfGuests input fiels to numbers from 1-9
+// restrict the nomOfGuests input fiels to numbers from 0-9
 function isNumberKey(evt)
       {
          var charCode = (evt.which) ? evt.which : event.keyCode
@@ -10,21 +10,6 @@ function isNumberKey(evt)
 
          return true;
       }
-    
-// function charcheck(evt) {
-//     var ch = String.fromCharCode(evt.which);
-//     // if (( /^[+]?[0-9]{1,3}(?:[0-9]*(?:[.,][0-9]{1})?|(?:,[0-9]{3})*(?:\.[0-9]{1,2})?|(?:\.[0-9]{3})*(?:,[0-9]{1,2})?)$/.test(ch))) {
-//     if (!(/^[0-9]$/)) {
-//         evt.preventDefault();
-//         // console.log("charcheck does not work")
-//         return false;
-//     }
-//     else{
-//         // console.log("charcheck works")
-//         evt.preventDefault();
-//         return false;
-//     }
-// }
 
 function calculate() {
 // numOfGuests = 1;
@@ -82,12 +67,6 @@ function billSplitN(){
     window.location = href="tip_calc_n.html"
     console.log("No, it works")
 }
-// function moreThanOneGuest(result1, result2, result3, result4) {
-//     document.getElementById("total-tip").innerHTML = "The total tip is $" + result1;
-//     document.getElementById("tip-per-person").innerHTML = "The tip P/P is $" + result2;
-//     document.getElementById("total-per-person").innerHTML = "Total charge + tip P/P is $" + result3;
-//     document.getElementById("total-bill").innerHTML = "The total charge + total tip is $" + result4;
-// }
 
 // reset button
 function reset(){
@@ -150,26 +129,3 @@ showResults();
 
 //     }
 // }
-
-
-
-// function errorEmptyBill() {
-//     console.log("error working")
-//     // if (document.getElementById("totalBill").value == "") {
-//         while (document.getElementById("totalBill").value == "") {
-//             // alert("Please Enter Bill Amount ");
-//             document.getElementById("totalBill").focus();
-//             document.getElementById("totalBill").style.borderColor = "red" ;
-//         return false;
-//             break;
-
-//             // document.getElementById(".inputErrMsg").text("Please Enter Bill Amount").show();
-        
-//         // break;
-//     }
-//         console.log("is not empty")
-//         // document.getElementById("totalBill").style.borderColor = "blue" ;
-//     // }
-
-// }
-
