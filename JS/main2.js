@@ -1,5 +1,5 @@
 
-
+// it is clean !!
 
 // restrict the nomOfGuests input fiels to numbers from 0-9
 function isNumberKey(evt)
