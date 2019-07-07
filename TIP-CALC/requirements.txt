@@ -1,0 +1,8 @@
+certifi==2019.6.16
+gunicorn==19.9.0
+javascript==2015.32.59
+numpy==1.16.4
+pandas==0.24.2
+python-dateutil==2.8.0
+pytz==2019.1
+six==1.12.0
