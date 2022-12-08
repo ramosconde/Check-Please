@@ -1,4 +1,4 @@
-certifi==2019.6.16
+certifi==2022.12.7
 gunicorn==19.9.0
 javascript==2015.32.59
 numpy==1.16.4
